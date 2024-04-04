@@ -27,13 +27,9 @@ export function verificarAcesso(requisicao, resposta, next)
     const token = requisicao.headers['authorization'];
     let tokenDecodificado = undefined;
     if (token)
-    {
         tokenDecodificado = verificarAssinatura(token);
-    }
     if ((tokenDecodificado !== undefined) && (tokenDecodificado.usuario.usuario == requisicao.session.usuarioAutenticado))
-    {
-        next();        
-    } 
+        next();
     else
     {
         resposta.status(401).json({

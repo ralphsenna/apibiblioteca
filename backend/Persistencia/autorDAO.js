@@ -35,10 +35,15 @@ export default class AutorDAO
         let parametros = [];
         let sql;
         if (!isNaN(parseInt(parametroConsulta)))
+        {
             sql = "SELECT * FROM Autor WHERE aut_cod = ?";
+            parametros = [parametroConsulta];
+        }
         else
+        {
             sql = "SELECT * FROM Autor WHERE aut_nome LIKE ?";
-        parametros = ["%" + parametroConsulta + "%"];
+            parametros = ["%" + parametroConsulta + "%"];
+        }
         const conexao = await conectar();
         const [registros] = await conexao.execute(sql, parametros);
         let listaAutores = [];
