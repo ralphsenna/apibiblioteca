@@ -90,12 +90,9 @@ export default class AutorDAO
             await conexao.beginTransaction();
             try
             {
-                let sql = "DELETE FROM Autor WHERE aut_cod = ?";
-                let parametros = [autor.codigo];
+                const sql = "DELETE FROM Autor WHERE aut_cod = ?";
+                const parametros = [autor.codigo];
                 await conexao.execute(sql, parametros);
-                /* sql = "DELETE FROM Livro WHERE aut_cod = ?";
-                parametros = [autor.codigo];
-                await conexao.execute(sql, parametros); */
                 await conexao.commit();
             }
             catch (erro)
