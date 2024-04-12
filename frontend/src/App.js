@@ -4,8 +4,8 @@ import Tela404 from "./telas/tela404";
 import TelaLogin from "./telas/telaLogin";
 import TelaMenu from './telas/telaMenu';
 import TelaCadastroAutores from "./telas/telaCadastroAutores";
-/* import TelaCadastroBiblioteca from "./componentes/telas/telaCadastroBiblioteca";
-import TelaCadastroLivro from "./componentes/telas/telaCadastroLivro"; */
+import TelaCadastroLivro from "./telas/telaCadastroLivros";
+import TelaCadastroBiblioteca from "./telas/telaCadastroBibliotecas";
 
 export const ContextoUsuario = createContext('');
 
@@ -31,8 +31,8 @@ function App()
                     <BrowserRouter>
                         <Routes>
                             <Route path="/autor" element={<TelaCadastroAutores/>}/>
-                            {/* <Route path="/biblioteca" element={<TelaCadastroBiblioteca/>}/>
-                            <Route path="/livro" element={<TelaCadastroLivro/>}/> */}
+                            <Route path="/livro" element={<TelaCadastroLivro/>}/>
+                            <Route path="/biblioteca" element={<TelaCadastroBiblioteca/>}/>
                             <Route path="/" element={<TelaMenu/>} />
                             <Route path="*" element={<Tela404/>} />
                         </Routes>

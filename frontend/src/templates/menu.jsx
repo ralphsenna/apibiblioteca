@@ -15,11 +15,11 @@ export default function Menu(props)
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                         <NavDropdown title="Cadastros" id="basic-nav-dropdown">
-                            <NavDropdown.Item>Bibliotecas</NavDropdown.Item>
-                            <NavDropdown.Divider/>
                             <NavDropdown.Item><Link to="/autor">Autores</Link></NavDropdown.Item>
                             <NavDropdown.Divider/>
-                            <NavDropdown.Item>Livros</NavDropdown.Item>
+                            <NavDropdown.Item><Link to="/livro">Livros</Link></NavDropdown.Item>
+                            <NavDropdown.Divider/>
+                            <NavDropdown.Item><Link to="/biblioteca">Bibliotecas</Link></NavDropdown.Item>
                         </NavDropdown>
                         <Nav.Link href="#" onClick={() => {
                                 setUsuario({ ...usuario, logado: false})

@@ -39,10 +39,10 @@ export default function FormCadAutores(props)
                     <Form.Control
                         disabled
                         type="number"
-                        placeholder="0"
-                        value={autor.codigo}
+                        placeholder=""
                         id="codigo"
                         name="codigo"
+                        value={autor.codigo}
                         onChange={manipularMudanca}
                     />
                 </Form.Group>
@@ -54,9 +54,9 @@ export default function FormCadAutores(props)
                         required
                         type="text"
                         placeholder="Nome Completo"
-                        value={autor.nome}
                         id="nome"
                         name="nome"
+                        value={autor.nome}
                         onChange={manipularMudanca}
                     />
                     <Form.Control.Feedback type='invalid'>Por favor, informe o nome do autor.</Form.Control.Feedback>
@@ -81,7 +81,7 @@ export default function FormCadAutores(props)
                     <Form.Control 
                         required 
                         type="date" 
-                        placeholder="Data de Nascimento" 
+                        placeholder="" 
                         id="dataNascimento"
                         name="dataNascimento"
                         value={autor.dataNascimento}
@@ -92,7 +92,7 @@ export default function FormCadAutores(props)
                 </Form.Group>
             </Row>
             <Button style={{marginRight:'5px'}} type="submit">
-                {props.atualizando ? 'Atualizar' : 'Gravar'}
+                {props.atualizando ? 'Alterar' : 'Gravar'}
             </Button>
             <Button onClick={() => {
                 if (props.atualizando)

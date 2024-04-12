@@ -21,14 +21,14 @@ CREATE TABLE Livro (
     liv_editora VARCHAR(100) NOT NULL,
     liv_genero VARCHAR(50) NOT NULL,
     liv_data_publicacao DATE NOT NULL,
-    liv_numPag INT NOT NULL,
-    aut_cod INT,
+    liv_num_paginas INT NOT NULL,
+    aut_cod INT NOT NULL,
     FOREIGN KEY (aut_cod) REFERENCES Autor(aut_cod)
 );
 
 CREATE TABLE Livro_Biblioteca (
-    liv_cod INT,
-    bli_cod INT,
+    liv_cod INT NOT NULL,
+    bli_cod INT NOT NULL,
     lb_quantidade INT NOT NULL,
     lb_condicao VARCHAR(50) NOT NULL,
     lb_data_aquisicao DATE NOT NULL,
